@@ -112,8 +112,7 @@ function generateCode(batas) {
        })
       
     const joining = arr.join('')
-       sayHelloRandom(joining)
-    
+       sayHelloRandom(joining)  
    
    }
    return arr
@@ -139,8 +138,106 @@ window.addEventListener("scroll",()=>{
     const height = window.scrollY
    const buletNumber = Math.floor(height)
     if(buletNumber >=60){
-      const createElement = document.createElement("div")
+       const createElement = document.createElement("div")
       const giftkelas = createElement.classList.add("giftkelas")
       
     }
+// })
+const para = document.querySelector(".title")
+const container = document.querySelector(".container")
+const inijalanPertama =() =>{
+    setTimeout(async() => {
+       await console.log("halo") 
+    }, 4000);
+}
+inijalanPertama()
+
+const awaitLagi = ()=>{
+    setTimeout(async() => {await console.log("ini keua ") }, 2000)
+}
+awaitLagi()
+ console.log("memel")
+
+ const buffer = new ArrayBuffer(16);
+ console.log(buffer)
+
+ document.addEventListener("keydown",(e)=>{
+    e =e || window.event
+
+   if(e.keyCode === 37){
+    container.removeChild(container.lastElementChild)
+    container.scrollTo({
+    top:100,
+    left:100,
+    behavior:"smooth"
+   })
+  
+   }else{
+
+   }
+ })
+ const promise = new Promise ((resolve, reject) => {
+  const sto =setTimeout(() => {
+    console.log("hallo")
+  }, 3000);
+  if (sto > 3000) {
+    resolve()
+    
+  } else {
+    reject()
+  }
+ }).then((val) => { console(val)})
+let ditepati = true;
+const janji = new Promise((resolve, reject) =>{
+    if(!ditepati){
+        resolve('janji di tepati')
+    }else{
+        reject('janji di ingkari')
+    }
 })
+.then((val) => {console.log(val)})
+.catch((err) => {console.log(err)})
+console.log("mulai")
+let ditepati = true
+const janji = new Promise ((resolve, reject) => {
+    if(ditepati){setTimeout(() => { 
+        resolve("diteapti sabar")
+     },3000 )
+    }else{setTimeout(() => {
+   reject("tidak diteapti sabar")
+    },3000 )}
+})
+const janji2 = new Promise ((resolve, reject) => {
+    setTimeout(() => { 
+      resolve([{
+        nama : 'nama',
+        kelas : 'kelas'
+      }])
+     },4000)
+})
+Promise.all([janji,janji2])
+.then((res)=>console.log(res))
+.then((res)=>{
+    const [janji,janji2] = res
+    console.log(janji)
+})
+
+const as =async (nama) => {
+   try {
+    const waktu = 3000
+    if(waktu >6000){
+       setTimeout(async() => { 
+        await console.log(nama)
+        },waktu)
+    }
+   } catch (err) {
+  setTimeout(async() => {
+    await console.log("matos")
+  }, waktu);
+   }
+}
+const carinama =()=>{
+    const nama = "raden Muhamad rifkin"
+    as(nama)
+}
+carinama()
